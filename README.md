@@ -1,3 +1,5 @@
+xTuple Build: [![Build Status](https://travis-ci.org/xtuple/pm2.svg)](https://travis-ci.org/xtuple/pm2)
+
 # ![PM2](https://github.com/unitech/pm2/raw/master/pres/top-logo-wo.png)
 
 pm2 is a process manager for Node apps with a builtin load-balancer.
