@@ -1,4 +1,22 @@
 
+# 0.7.9
+
+- More verbosity to pm2.log
+- New README.md
+- --merge-logs option to merge logs for a group of process
+- return failure code when no process has been reloaded
+- Upgrade of outdated packages
+- Silent (-s) flag remove all possible pm2 output to CLI
+- New display for list, more compact
+- Fix 0.10.x issue when stop/kill
+- Helper shown when -h
+- Linter errors
+- Systemd support for Fedora / ArchLinux
+- #381 Add support for Amazon Linux startup script
+- Fixed rendering
+- Interaction possible with VitalSigns.io
+- Avoid exception when dump file is not present
+
 # 0.7.8
 
 - List processes with user right `service pm2-init.sh status`

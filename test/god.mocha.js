@@ -16,9 +16,10 @@ function getConf() {
 }
 
 describe('God', function() {
-
   before(function(done) {
-    God.deleteAll({}, done);
+    God.deleteAll({}, function(err, dt) {
+      done();
+    });
   });
 
   it('should have right properties', function() {
@@ -30,6 +31,7 @@ describe('God', function() {
     God.should.have.property('getFormatedProcesses');
     God.should.have.property('checkProcess');
     God.should.have.property('stopAll');
+    God.should.have.property('reloadLogs');
     God.should.have.property('stopProcessId');
     God.should.have.property('reload');
     God.should.have.property('reloadProcessName');
@@ -39,7 +41,9 @@ describe('God', function() {
 
   describe('Special functions for God', function() {
     before(function(done) {
-      God.deleteAll({}, done);
+      God.deleteAll({}, function(err, dt) {
+        done();
+      });
     });
 
     it('should kill a process by name', function(done) {
@@ -64,7 +68,9 @@ describe('God', function() {
     var proc, pid;
 
     before(function(done) {
-      God.deleteAll({}, done);
+      God.deleteAll({}, function(err, dt) {
+        done();
+      });
     });
 
     it('should fork one process', function(done) {
@@ -82,9 +88,10 @@ describe('God', function() {
     var clu, pid;
 
     before(function(done) {
-      God.deleteAll({}, done);
+      God.deleteAll({}, function(err, dt) {
+        done();
+      });
     });
-
     it('should start a process', function(done) {
       God.prepare(getConf(), function(err, proce) {
 	clu = proce;
@@ -178,7 +185,9 @@ describe('God', function() {
   describe('Reload - cluster', function() {
 
     before(function(done) {
-      God.deleteAll({}, done);
+      God.deleteAll({}, function(err, dt) {
+        done();
+      });
     });
 
     it('should launch app', function(done) {
@@ -220,11 +229,16 @@ describe('God', function() {
   describe('Multi launching', function() {
 
     before(function(done) {
-      God.deleteAll({}, done);
+      God.deleteAll({}, function(err, dt) {
+        done();
+      });
     });
 
+
     afterEach(function(done) {
-      God.deleteAll({}, done);
+      God.deleteAll({}, function(err, dt) {
+        done();
+      });
     });
 
     it('should launch multiple processes depending on CPUs available', function(done) {
